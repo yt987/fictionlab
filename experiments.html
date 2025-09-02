@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Experiments — Fiction Lab</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script defer src="assets/js/nav.js"></script>
+  <script defer src="assets/js/experiments.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <h1>Experiments</h1>
+  <p class="tagline">Browse baselines vs. pipeline outputs, metrics, and notes.</p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="experiments.html" class="active">Experiments</a>
+    <a href="methodology.html">Methodology</a>
+    <a href="rubric.html">Rubric</a>
+    <a href="reproduce.html">Reproduce</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<main class="content">
+  <div class="filters">
+    <input id="search" type="search" placeholder="Search by tag/title…" />
+    <div id="tagbar"></div>
+  </div>
+
+  <div id="cards" class="cards"></div>
+
+  <template id="card-tpl">
+    <article class="card">
+      <h3 class="card-title"></h3>
+      <p class="meta"></p>
+      <div class="tags"></div>
+      <div class="actions">
+        <button class="button small view-btn">Open</button>
+      </div>
+    </article>
+  </template>
+
+  <dialog id="viewer" class="viewer">
+    <div class="viewer-body">
+      <h3 id="v-title"></h3>
+      <p id="v-meta" class="meta"></p>
+
+      <div class="sidebyside">
+        <div>
+          <h4>Baseline</h4>
+          <pre id="v-baseline" class="codeblock"></pre>
+        </div>
+        <div>
+          <h4>Pipeline</h4>
+          <pre id="v-pipeline" class="codeblock"></pre>
+        </div>
+      </div>
+
+      <div class="charts">
+        <canvas id="chart-distinct"></canvas>
+        <canvas id="chart-human"></canvas>
+      </div>
+
+      <details class="notes">
+        <summary>Notes</summary>
+        <div id="v-notes"></div>
+      </details>
+    </div>
+    <form method="dialog" class="viewer-actions">
+      <button class="button">Close</button>
+    </form>
+  </dialog>
+</main>
+
+<footer class="site-footer">
+  <p>Fiction Lab Experiments</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1 @@
+// simple nav enhancer (highlight handled in HTML)

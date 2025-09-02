@@ -1,0 +1,77 @@
+[
+  {
+    "id": "rooftop-argument-romcom",
+    "title": "Rooftop Argument (Romcom)",
+    "tags": [
+      "romcom",
+      "dialogue-heavy",
+      "slow-burn"
+    ],
+    "model": "llama3.1:8b (local via Ollama)",
+    "pipeline": [
+      "Beat planner",
+      "Style RAG",
+      "Repetition critic",
+      "Voice critic",
+      "Stereotype guard"
+    ],
+    "metrics": {
+      "distinct2": 0.89,
+      "distinct3": 0.78,
+      "repetition_rate": 0.03,
+      "beat_coverage": 1.0,
+      "human_voice": 4.2,
+      "human_coherence": 4.5,
+      "human_humor": 3.6
+    },
+    "baseline_metrics": {
+      "distinct2": 0.74,
+      "distinct3": 0.58,
+      "repetition_rate": 0.1,
+      "beat_coverage": 0.33,
+      "human_voice": 2.9,
+      "human_coherence": 3.1,
+      "human_humor": 2.1
+    },
+    "baseline_file": "rooftop_baseline.txt",
+    "pipeline_file": "rooftop_pipeline.txt",
+    "notes": "Pipeline increased dialogue ratio, removed stock romcom beats, and enforced an in-character surprise."
+  },
+  {
+    "id": "kitchen-confession-drama",
+    "title": "Kitchen Confession (Drama)",
+    "tags": [
+      "drama",
+      "character-driven",
+      "first-person"
+    ],
+    "model": "llama3.1:8b (local via Ollama)",
+    "pipeline": [
+      "Beat planner",
+      "Style RAG",
+      "Coherence critic",
+      "Repetition critic"
+    ],
+    "metrics": {
+      "distinct2": 0.83,
+      "distinct3": 0.71,
+      "repetition_rate": 0.05,
+      "beat_coverage": 0.83,
+      "human_voice": 4.0,
+      "human_coherence": 4.2,
+      "human_humor": 2.4
+    },
+    "baseline_metrics": {
+      "distinct2": 0.7,
+      "distinct3": 0.56,
+      "repetition_rate": 0.11,
+      "beat_coverage": 0.33,
+      "human_voice": 3.0,
+      "human_coherence": 3.2,
+      "human_humor": 1.8
+    },
+    "baseline_file": "kitchen_baseline.txt",
+    "pipeline_file": "kitchen_pipeline.txt",
+    "notes": "Cut exposition by compressing it into subtexted dialogue; fixed two continuity slips (age and prior job)."
+  }
+]

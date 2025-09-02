@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Methodology — Fiction Lab</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/nav.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <h1>Methodology</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="experiments.html">Experiments</a>
+    <a href="methodology.html" class="active">Methodology</a>
+    <a href="rubric.html">Rubric</a>
+    <a href="reproduce.html">Reproduce</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<main class="content">
+  <h2>Pipeline (Multi‑Pass Writer’s Room)</h2>
+  <ol>
+    <li><strong>Story Bible (RAG):</strong> World rules, character sheets, banned tropes. Retrieve relevant snippets per scene.</li>
+    <li><strong>Beat Planner:</strong> Generate 5–6 concrete beats (goal, obstacle, turn, fallout, hook).</li>
+    <li><strong>Scene Realizer:</strong> Draft the scene to the beats. Dialogue‑first, one in‑character surprise.</li>
+    <li><strong>Critics:</strong> Tiny local passes:
+      <ul>
+        <li>Repetition (n‑gram & adjective overuse)</li>
+        <li>Voice (align lines with character diction)</li>
+        <li>Coherence (facts + goals with bible)</li>
+        <li>Stereotype guard (replace stock shorthand with specifics)</li>
+        <li>Optional humor punch‑up</li>
+      </ul>
+    </li>
+    <li><strong>Assembler:</strong> Apply line‑level rewrites and output final scene.</li>
+  </ol>
+
+  <h2>Why it works</h2>
+  <p>
+    LLMs are fluent locally but weak globally. Splitting planning and realization adds structure; retrieval anchors voice and continuity; critics enforce variety and specificity.
+  </p>
+
+  <h2>Models & Environment</h2>
+  <p>
+    All experiments run locally (no paid APIs). Example setup: Ollama + an 8B instruct model for drafting,
+    and smaller models for critics. Style and lore are stored in plain text and retrieved with local embeddings.
+  </p>
+</main>
+
+<footer class="site-footer">
+  <p>Methodology — Fiction Lab</p>
+</footer>
+</body>
+</html>

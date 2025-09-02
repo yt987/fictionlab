@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reproduce — Fiction Lab</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/nav.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <h1>Reproduce Locally (No Cost)</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="experiments.html">Experiments</a>
+    <a href="methodology.html">Methodology</a>
+    <a href="rubric.html">Rubric</a>
+    <a href="reproduce.html" class="active">Reproduce</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<main class="content">
+  <h2>Quickstart</h2>
+  <ol>
+    <li>Install <code>ollama</code> (Mac): <code>brew install ollama</code></li>
+    <li>Pull a local model: <code>ollama pull llama3.1:8b</code></li>
+    <li>Clone the repo and run the CLI (optional enhancement): <code>python cli.py</code></li>
+    <li>Add your own lore in <code>lore/</code> and style refs in <code>style/</code></li>
+    <li>Generate scenes; export baseline vs. pipeline into <code>data/experiments/</code></li>
+  </ol>
+
+  <h2>Data format</h2>
+  <pre class="codeblock">data/experiments.json
+└── [
+  { "id": "scene-id",
+    "title": "Title",
+    "tags": ["romcom","dialogue-heavy"],
+    "model": "llama3.1:8b",
+    "pipeline": ["Beat planner","Style RAG","Repetition critic","Voice critic"],
+    "metrics": {...},
+    "baseline_metrics": {...},
+    "baseline_file": "scene_baseline.txt",
+    "pipeline_file": "scene_pipeline.txt",
+    "notes": "What changed and why it worked."
+  }
+]
+  </pre>
+
+  <p>HTML/JS on this site simply reads the JSON and text files — no servers, no keys.</p>
+</main>
+
+<footer class="site-footer">
+  <p>Reproduce — Fiction Lab</p>
+</footer>
+</body>
+</html>

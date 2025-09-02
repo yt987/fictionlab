@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fiction Lab — Making AI Fiction Less Mid</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/nav.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <h1>Fiction Lab</h1>
+  <p class="tagline">A zero-cost, local pipeline to make AI fiction less stiff, repetitive, and tropey.</p>
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="experiments.html">Experiments</a>
+    <a href="methodology.html">Methodology</a>
+    <a href="rubric.html">Rubric</a>
+    <a href="reproduce.html">Reproduce</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<main class="content">
+  <section class="hero">
+    <h2>What is this?</h2>
+    <p>
+      This site showcases a practical, <strong>no‑API, no‑cost</strong> pipeline for improving creative fiction generation
+      using local models. The approach uses multi‑pass writing (planning → drafting → tiny critic passes) and
+      lightweight retrieval for <em>voice</em> and <em>continuity</em>.
+    </p>
+    <div class="cta">
+      <a class="button" href="experiments.html">Explore the experiments</a>
+      <a class="button button-secondary" href="reproduce.html">Run it yourself</a>
+    </div>
+  </section>
+
+  <section class="grid2">
+    <div>
+      <h3>Why this exists</h3>
+      <p>
+        Most LLM fiction is bland because models optimize for <em>average</em>. We split the problem:
+        <strong>beat planning</strong> for global control, <strong>style retrieval</strong> for voice, and
+        <strong>critics</strong> for repetition, stereotype, and coherence. Small, surgical steps &gt; one giant prompt.
+      </p>
+    </div>
+    <div>
+      <h3>What you'll find</h3>
+      <ul>
+        <li>Baseline vs. pipeline scenes with side‑by‑side diffs</li>
+        <li>Human rubric scores + simple metrics (distinct‑n, repetition)</li>
+        <li>Clear, reproducible steps to run everything locally</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Built by Yohana’s Fiction Lab. MIT Licensed.</p>
+</footer>
+</body>
+</html>

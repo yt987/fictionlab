@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Playground — Fiction Lab</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <h1>Playground (Browser-only, $0)</h1>
+  <p class="tagline">Runs a tiny model in your browser via WebGPU. First load may be large and slow.</p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="experiments.html">Experiments</a>
+    <a href="methodology.html">Methodology</a>
+    <a href="rubric.html">Rubric</a>
+    <a href="reproduce.html">Reproduce</a>
+    <a href="about.html">About</a>
+    <a href="playground.html" class="active">Playground</a>
+  </nav>
+</header>
+
+<main class="content">
+  <section class="hero">
+    <p><strong>Tip:</strong> Use Chrome/Edge desktop with WebGPU enabled. First model download can be ~1–2 GB and will be cached by the browser.</p>
+    <p id="gpu-check"></p>
+
+    <div class="grid2">
+      <div>
+        <label>Model</label>
+        <select id="model">
+          <!-- Tiny chat models known to work in-browser with Transformers.js -->
+          <option value="Xenova/tinyllama-1.1b-chat-v1.0" selected>tinyllama-1.1B-chat (fastest)</option>
+          <option value="Xenova/phi-2">phi-2 (bigger, generic)</option>
+        </select>
+      </div>
+      <div>
+        <label>Max new tokens</label>
+        <input id="max-toks" type="number" value="220" min="64" max="512" />
+      </div>
+    </div>
+
+    <div class="grid2" style="margin-top:12px">
+      <div>
+        <label>Scene brief (what happens)</label>
+        <textarea id="brief" rows="6" placeholder="e.g., Rooftop argument in winter; they admit they’re 'co-conspirators' instead of friends..."></textarea>
+      </div>
+      <div>
+        <label>Style notes (voice, taboos)</label>
+        <textarea id="style" rows="6" placeholder="dry, modern, flirty; avoid melodrama; compress exposition into subtexted dialogue; banned: 'single tear', 'smirks'"></textarea>
+      </div>
+    </div>
+
+    <div class="cta">
+      <button id="run" class="button">Run pipeline</button>
+      <button id="load" class="button button-secondary">Preload model</button>
+    </div>
+
+    <p id="status" class="meta" style="margin-top:10px">Status: idle</p>
+  </section>
+
+  <section class="grid2" style="margin-top:16px">
+    <div class="card">
+      <h3>Baseline (one-pass)</h3>
+      <pre id="out-baseline" class="codeblock"></pre>
+    </div>
+    <div class="card">
+      <h3>Beats (planner)</h3>
+      <pre id="out-beats" class="codeblock"></pre>
+    </div>
+  </section>
+
+  <section class="grid2" style="margin-top:16px">
+    <div class="card">
+      <h3>Pipeline Draft (beats → scene)</h3>
+      <pre id="out-draft" class="codeblock"></pre>
+    </div>
+    <div class="card">
+      <h3>Critic Pass (de-repetition, anti-cliché)</h3>
+      <pre id="out-final" class="codeblock"></pre>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Playground — runs fully in the browser using Transformers.js + WebGPU.</p>
+</footer>
+
+<!-- Transformers.js via CDN -->
+<script type="module" src="assets/js/playground.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+Final approach, ten meters per second and bleeding. The guidance AI clicks into safe-mode mid-sentence and throws the panel into monochrome.
+“Control, we lost auto-dock,” the pilot says, fingers already on the hand-controllers.
+“Copy,” the loop answers. “Station attitude nominal. You’re authorized for manual at one point two.”
+
+The station’s floodlights come up in a cold fan. Gyros settle. The pilot nudges translation; the ship shivers, then answers. The target ring is a pale coin. A maintenance drone drifts across the viewport, lazily spinning a wrench like a weather vane.
+
+“Please tell me that drone is not on our vector.”
+“It is now,” says Control. “Recommend bump on B ring.”
+
+The pilot vectors right, taps rotation, and lets the inertia finish the move. The drone kisses the bumper and pinwheels away, offended. The ship’s nose slides into alignment like a thought finishing.
+
+“Soft capture,” the panel says, alive again. Latches chatter; the hull relaxes. The pilot logs the anomaly:
+— guidance watchdog too aggressive,
+— manual handover friction too high,
+— and one undocumented hero, model MX-7, who refuses to respect lanes.

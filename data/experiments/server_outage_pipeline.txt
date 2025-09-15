@@ -1,0 +1,16 @@
+02:14. Pager. The on-call toggles into VPN, wakes the laptop, and tails the edge logs.
+“Traffic?” asks the incident commander, already opening the status page.
+“Spiking 502s at the CDN,” the on-call says. “Origin health checks failing.”
+
+They pin a window: CPU pinned on cache-02, evictions spiking. A rolling restart clears the metric for twelve seconds, then the graph cliffs again.
+
+“Feature flags in the last hour?” the scribe asks.
+A diff pops up: an innocuous performance tweak shipped with a hidden footgun—TTL from 300s to 1s for a single keyspace. Cache stampede, all the way down.
+
+“Revert the flag,” says the commander. “And set stale-while-revalidate on the hot paths.”
+“Reverting… shipped. SWR enabled. Give it thirty.”
+
+The line of red in the dashboard thins to pink, then threads back to green. The war room chat exhales.
+
+“Add an alert on TTL deltas,” the on-call says, already writing the postmortem. “And canary cache with a shadow pool.”
+“Also a chaos test for stampede,” someone adds. The commander sets owners and dates. By 02:41, the pager is quiet enough to hear the fans again.
